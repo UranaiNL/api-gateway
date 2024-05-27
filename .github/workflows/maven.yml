@@ -41,6 +41,7 @@ jobs:
       SERVICE: api-gateway
       PORT: 8181
       REGION: europe-west4
+      DISCOVERY_SERVER_URL: https://discovery-server-sudhmxsl2q-ez.a.run.app/eureka
     steps:
       - name: Checkout
         uses: actions/checkout@v3
