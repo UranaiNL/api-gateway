@@ -39,12 +39,12 @@ jobs:
     env:
       PROJECT_ID: re-play-420511
       SERVICE: api-gateway
-      PORT: 8081
+      PORT: 8181
       REGION: europe-west4
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Sets up the gcloud cli with the credentials we previously created, and will be storing within Github as secrets.
+
       - name: Setup Cloud cli
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
