@@ -19,7 +19,7 @@ public class SecurityConfig {
         serverHttpSecurity
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchange ->
-                        exchange.pathMatchers("/eureka/**", "/api/replay/**", "/api/game/**", "/api/character/**")
+                        exchange.pathMatchers("/eureka/**", "/api/replay/**", "/api/game/**", "/api/character/**", "/actuator/**")
                                 .permitAll()
                                 .anyExchange()
                                 .authenticated())
@@ -38,6 +38,8 @@ public class SecurityConfig {
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/**", config);
+        source.registerCorsConfiguration("/actuator/**", config);
+        source.registerCorsConfiguration("/eureka/**", config);
 
         return new CorsWebFilter(source);
     }
