@@ -19,7 +19,7 @@ public class SecurityConfig {
         serverHttpSecurity
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchange ->
-                        exchange.pathMatchers("/eureka/**", "/api/replay/**", "/api/game/**", "/api/character/**", "/actuator/**")
+                        exchange.pathMatchers("/eureka/**", "/api/replay/**", "/api/game/**", "/api/character/**", "/actuator/**", "/grafana/**")
                                 .permitAll()
                                 .anyExchange()
                                 .authenticated())
